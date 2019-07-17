@@ -3,6 +3,7 @@ import Intro from './components/Intro';
 import Landing from './components/Landing';
 import './resources/styles/App.scss';
 import About from './components/About';
+import Projects from './components/Projects';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ const App = () => {
       <Landing />
       <div className={loading ? 'd-none' : ''}>
         <About />
+        <Projects />
       </div>
     </>
   );

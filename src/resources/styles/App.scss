@@ -212,3 +212,73 @@ body {
     }
   }
 }
+
+#projects {
+  background-color: map-get($colors, black);
+  color: map-get($colors, white);
+  padding: 0.75rem 0.5rem 2rem;
+  text-align: center;
+
+  .title {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+    grid-gap: 1rem;
+
+    .project {
+      border-radius: 1rem;
+      box-shadow: 0rem 0rem 0.25rem 0.125rem black;
+
+      span {
+        display: inline-block;
+      }
+      
+      .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 1rem auto 0rem;
+        text-decoration: underline;
+      }
+
+      .description {
+        padding: 1rem;
+      }
+
+      img {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        width: 100%;
+      }
+
+      .icon {
+        max-width: 1.75rem;
+        padding: 0rem 0.5rem;
+
+        text {
+          fill: transparent;
+        }
+      }
+
+      a {
+        display: inline-block;
+        margin: 1rem 0.5rem 1.5rem;
+        text-decoration: none;
+
+        &.button-source i {
+          padding-right: 0.25rem;
+        }
+
+        &.button-project i {
+          padding-left: 0.25rem;
+        }
+      }
+    }
+  }
+}
