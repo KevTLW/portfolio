@@ -282,3 +282,69 @@ body {
     }
   }
 }
+
+#skills {
+  padding: 1rem 0rem;
+  text-align: center;
+
+  .title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    text-decoration: underline;
+    user-select: none;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+    user-select: none;
+  }
+
+  .description {
+    padding-bottom: 0.625rem;
+    user-select: none;
+  }
+
+  .stack {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 13.75rem;
+
+    .stack-animation {
+      animation: scroll 30000ms linear infinite reverse;
+      @keyframes scroll {
+        0% { 
+          transform: translateX(0rem);
+        }
+
+        100% { 
+          transform: translateX(-74.2rem);
+        }
+      }
+    }
+    
+    .icon {
+      max-width: 1.75rem;
+      padding: 0.5rem;
+
+      text {
+        fill: transparent;
+      }
+    }
+  }
+  
+  a {
+    color: map-get($colors, black);
+    display: inline-block;
+    margin: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: map-get($colors, black);
+      color: map-get($colors, white);
+    }
+
+    i {
+      padding-right: 0.25rem;
+    }
+  }
+}
