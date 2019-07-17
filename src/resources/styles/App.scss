@@ -1,1 +1,172 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,700&display=swap');
+@import './utils/colors.scss';
+
+
+body {
+  animation: overflow-switch 3500ms forwards;
+  color: map-get($colors, black);
+  font-family: 'Cabin', sans-serif;
+  margin: 0rem;
+  overflow-x: hidden;
+
+  @keyframes overflow-switch {
+    0%, 99% {
+      overflow-y: hidden;
+    }
+
+    100% {
+      overflow-y: auto;
+    }
+  }
+}
+
+.screen {
+  display: grid;
+
+  &-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+
+    &-full {
+      @extend .screen-section;
+      height: 100vh;
+      padding: 0rem 1.5rem;
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  height: 0.25rem;
+  width: 0.25rem;
+
+  &-thumb {
+    background-color: map-get($colors, black);
+  }
+  
+  &-track {
+    background-color: map-get($colors, white);
+  }
+}
+
+#intro {
+  animation: slide-in 1000ms, fade-out 1000ms 3500ms forwards;
+  background-color: map-get($colors, black);
+  position: absolute;
+  width: 100vw;
+  z-index: 10;
+
+  img {
+    animation: logo-effects 2500ms 1000ms forwards;
+    margin: 0rem auto;
+    width: 15rem;
+  }
+
+  @keyframes slide-in {
+    0% {
+      transform: translateY(-100vh);
+    }
+
+    100% {
+      transform: translateY(0vh);
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    
+    99% {
+      display: block;
+      opacity: 0;
+    }
+
+    100% {
+      display: none;
+      z-index: -1;
+    }
+  }
+
+  @keyframes logo-effects {
+    0%, 20%, 40% {
+      opacity: 1;
+    }
+
+    10%, 30% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+
+    99% {
+      display: block;
+    }
+
+    100% {
+      display: none;
+      opacity: 0;
+      transform: scale(1.25) rotate(360deg);
+    }
+  }
+}
+
+#landing {
+  animation: color-switch 1000ms forwards;
+
+  .title {
+    font-size: 5rem;
+    font-weight: 700;
+    user-select: none;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    user-select: none;
+  }
+
+  .bounce {
+    animation: bounce 500ms infinite cubic-bezier(0.5, 0.05, 1, 0.5) alternate;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  @keyframes color-switch {
+    0%, 99% {
+      background-color: map-get($colors, white);
+    }
+    
+    100% {
+      background-color: map-get($colors, black);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 25% {
+      transform: translateY(0.75rem);
+    }
+    100% {
+      transform: translateY(1.75rem);
+    }
+  }
+}
+
+#wave {
+  transform: rotate(180deg);
+  width: 100vw;
+
+  svg {
+    position: relative;
+    top: 0.375rem;
+  }
+}

@@ -1,0 +1,61 @@
+$colors: (
+  black: #222222,
+  white: #f5f5f5
+);
+
+$settings: background-color, color;
+
+@each $setting in $settings {
+  @each $name, $hex in $colors {
+    @if $setting == background-color {
+      .bg-#{$name} {
+        #{$setting}: $hex;
+      }
+    } @else if $setting == color {
+      .fg-#{$name} {
+        #{$setting}: $hex;
+      }
+    }
+  }
+}
+
+.button {
+  background: transparent;
+  border: 2px solid;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: 'Cabin';
+  font-size: .75rem;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding: .375rem .875rem;
+  text-transform: lowercase;
+  transition: 500ms;
+
+  &-disabled {
+    @extend .button;
+    border: none;
+    cursor: default;
+    
+    padding: 1rem .875rem .5rem;
+  }
+}
+
+@each $name, $hex in $colors {
+  .button-#{$name} {
+    @extend .button;
+    border-color: $hex;
+    color: $hex;
+
+    &:hover {
+      background-color: $hex;
+      color: map-get($colors, black);
+    }
+  }
+
+  .button-disabled-#{$name} {
+    @extend .button-disabled;
+    color: $hex;
+  }
+}
