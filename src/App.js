@@ -5,6 +5,7 @@ import './resources/styles/App.scss';
 import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Footer from './components/Footer';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ const App = () => {
         <About />
         <Projects />
         <Skills />
+        <Footer />
       </div>
     </>
   );

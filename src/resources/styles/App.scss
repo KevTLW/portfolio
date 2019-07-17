@@ -348,3 +348,17 @@ body {
     }
   }
 }
+
+#footer {
+  background-color: map-get($colors, black);
+  color: map-get($colors, white);
+  padding: 1.5rem 0.75rem;
+  text-align: center;
+
+  .icon {
+    max-width: 1.25rem;
+    padding: 0rem 0.25rem;
+    position: relative;
+    top: 0.125rem;
+  }
+}
