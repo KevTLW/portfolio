@@ -4,6 +4,7 @@
 
 body {
   animation: overflow-switch 3500ms forwards;
+  background-color: map-get($colors, white);
   color: map-get($colors, black);
   font-family: 'Cabin', sans-serif;
   margin: 0rem;
