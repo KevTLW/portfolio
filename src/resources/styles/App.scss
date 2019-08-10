@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,700&display=swap');
 @import './utils/colors.scss';
 
-
 body {
   animation: overflow-switch 3500ms forwards;
   background-color: map-get($colors, white);
@@ -117,6 +116,30 @@ body {
       display: none;
       opacity: 0;
       transform: scale(1.25) rotate(360deg);
+    }
+  }
+}
+
+#particles {
+  .particle {
+    border-radius: 100%;  
+    position: absolute;
+  }
+
+  @for $i from 1 through 100 {
+    .particle:nth-child(#{$i}){
+      animation: particle-animation-#{$i} 60000ms ($i * 200ms) infinite;
+      background: map-get($colors, white);
+      height: 0.125rem;
+      opacity: random();
+      transform: translateX(random(100) * 1vw) translateY(random(100) * 1vh);
+      width: 0.125rem;
+    }
+
+    @keyframes particle-animation-#{$i} {
+      100% {
+        transform: translateX(random(100) * 1vw) translateY(random(100) * 1vh);
+      }
     }
   }
 }

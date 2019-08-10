@@ -6,6 +6,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
+import Particles from './components/Particles';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <>
       <Intro />
+      <Particles />
       <Landing />
       <div className={loading ? 'd-none' : ''}>
         <About />
