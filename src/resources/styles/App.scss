@@ -128,7 +128,7 @@ body {
 
   @for $i from 1 through 100 {
     .particle:nth-child(#{$i}){
-      animation: particle-animation-#{$i} 60000ms ($i * 200ms) infinite;
+      animation: particle-animation-#{$i} 60000ms ($i * -200ms) infinite;
       background: map-get($colors, white);
       height: 0.125rem;
       opacity: random();
