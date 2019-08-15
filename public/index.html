@@ -13,9 +13,35 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <title>kev</title>
+    <style>
+      body {
+        margin: 0rem;
+        background-color: #f5f5f5;
+      }
+
+      noscript {
+        align-items: center;
+        background: #222222;
+        box-sizing: border-box;
+        color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        font-family: sans-serif;
+        height: 100vh;
+        justify-content: center;
+        padding: 1rem;
+      }
+
+      noscript img {
+        width: 250px;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <img src="./logo.png" alt="KevTLW" /> 
+      You need to enable JavaScript to run this app.
+    </noscript>
     <div id="root"></div>
     <script src="https://kit.fontawesome.com/b0637e347a.js"></script>
   </body>
